@@ -16,7 +16,7 @@ const app = express()
 app.use(cors({origin:"*"}))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
-app.use('/api/v1', router)
+app.use('/bolacash', router)
 
 // Creating the start server method
 const startServer  = async () => {
