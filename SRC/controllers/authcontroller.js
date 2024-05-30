@@ -77,8 +77,8 @@ export const signIn = async ( req, res, next) => {
     }
     try {
 
-        const {userName, phoneNumber, email,password} = req.body
-        const user = await User.findOne({$or:[{userName}, {email}, {phoneNumber}]})
+        const {email,password} = req.body
+        const user = await User.findOne({email})
 
         if(!user){
             return res.status(400).json({message: "User with email not found!"});

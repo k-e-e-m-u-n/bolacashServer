@@ -3,9 +3,7 @@ import mongoose from 'mongoose'
 const ecotipsSchema = mongoose.Schema({
 
     image : {
-        type : String,
-        required : true,
-        default: ''
+        type : String
     },
     header : {
         type : String,
@@ -21,7 +19,7 @@ const ecotipsSchema = mongoose.Schema({
     },
     category: {
         type : String,
-        enum : ['Enviromental Tips','Local Recylce','Global Enviroment','Global Enviromental News'],
+        enum : ['Enviromental Tips','Local Recycle','Global Enviroment','Global Enviromental News'],
         required : 'This field is required.'
     }
 

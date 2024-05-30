@@ -15,9 +15,10 @@ cloudinary.config({
 export const createPost = async (req, res) => {
     try {
      
-      let { image } = req.body;
+      // let { image } = req.body;
 
       const {
+        image,
         header,
         text,
         date,

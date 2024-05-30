@@ -23,7 +23,9 @@ const pickupSchema = mongoose.Schema({
         type: String
     }
 
-})
+},
+{timestamps : true}
+)
 
 
 const Pickup = mongoose.model('Pickup',pickupSchema)
