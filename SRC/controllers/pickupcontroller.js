@@ -45,3 +45,20 @@ export const getAllrequest = async (req, res) => {
        
       }
 }
+
+export const cancelSingleOrder = async (req, res) => {
+  try {
+    const orderId = req.params.Id
+    const requestToCancel = await Pickup.findByIdAndDelete(orderId);
+
+    if (!requestToCancel) {
+      res.status(400).json({message: `No request with such id:${orderId} found`})
+  } else {
+      res.status(200).json({message: 'request deleted successfully',requestToCancel})
+  }
+  } catch (error) {
+    res.status(500).json({ error: 'Internal server error' });
+    console.log(error);
+  }
+}
+

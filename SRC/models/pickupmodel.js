@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import { date } from 'zod'
 
 const pickupSchema = mongoose.Schema({
 
@@ -20,6 +21,18 @@ const pickupSchema = mongoose.Schema({
         required : true
     },
     pickupTime: {
+        type: String
+    },
+    status :{
+        type: String,
+        default: 'Pending',
+
+    },
+    cancelOrder: {
+        type: String,
+        default: ''
+    },
+    date: {
         type: String
     }
 
