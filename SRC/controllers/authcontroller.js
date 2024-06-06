@@ -1,7 +1,7 @@
 import cryptoHash from 'crypto';
 import User from '../models/usermodel.js';
 import { signUpValidator, signInValidator } from '../Validator/authvalidator.js';
-import { formatZodError } from '../utils/errorMessage.js';
+import { formatZodError } from '../utils/errormessage.js';
 import generateTokenAndSetCookie from '../utils/generateTokenAndSetCookie.js';
 
 
