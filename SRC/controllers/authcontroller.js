@@ -32,7 +32,6 @@ export const signUp = async (req, res, next) => {
             res.status(409).json({message: 'user already exists'})
         } else{
             const {
-                name,
                 userName,
                 password,
                 confirmPassword,
@@ -49,7 +48,6 @@ export const signUp = async (req, res, next) => {
 
             const encrytion = hashValue (password, confirmPassword);
              const newUser = new User({
-                name,
                 userName,
                 password: encrytion,
                 email,

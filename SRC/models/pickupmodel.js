@@ -25,7 +25,7 @@ const pickupSchema = mongoose.Schema({
     },
     status :{
         type: String,
-        default: 'Pending',
+        default: 'Pending'
 
     },
     cancelOrder: {
