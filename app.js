@@ -40,7 +40,7 @@ app.use(cors({
  
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
-app.use('/https://bolacash-server.onrender.com/bolacash', router)
+app.use('/bolacash', router)
 
 // Creating the start server method
 const startServer  = async () => {
