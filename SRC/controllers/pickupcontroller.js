@@ -10,7 +10,10 @@ export const requestPickup = async (req, res) => {
             location,
             description,
             quantity,
-            pickupTime
+            pickupTime,
+            status,
+            cancelOrder,
+            date
         } = req.body
 
         const newRequest = new Pickup({
@@ -18,7 +21,10 @@ export const requestPickup = async (req, res) => {
             location,
             description,
             quantity,
-            pickupTime
+            pickupTime,
+            status,
+            cancelOrder,
+            date
   });
 
   await newRequest.save();
