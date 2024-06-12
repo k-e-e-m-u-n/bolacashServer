@@ -32,7 +32,7 @@ const app = express()
 // app.use(cors({origin: ['https://bolacash.netlify.app']}));
 
 app.use(cors({ 
-   origin: 'https://bolacash.netlify.app', 
+   origin: 'https://bolacash-server.onrender.com', 
    methods: 'GET,POST,PUT,DELETE', 
    allowedHeaders: 'Content-Type,Authorization'
  }));
