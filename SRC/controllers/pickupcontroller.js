@@ -62,9 +62,31 @@ export const cancelSingleOrder = async (req, res) => {
   } else {
       res.status(200).json({message: 'request deleted successfully',requestToCancel})
   }
+
+  
   } catch (error) {
     res.status(500).json({ error: 'Internal server error' });
     console.log(error);
   }
 }
 
+export const updateOrderStatus = async (req, res) => {
+  try {
+    
+    const orderId = req.params.Id;
+    const requestToUpdate = await Pickup.findById(orderId);
+
+    if (!requestToUpdate) {
+      return res.status(404).json({ message: 'Order not found' });
+  }
+
+
+    requestToUpdate.status = "Succesful";
+    await requestToUpdate.save();
+
+    res.status(200).json({ message: 'Order status updated to Successful', requestToUpdate });
+
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+}

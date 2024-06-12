@@ -13,7 +13,12 @@ dotenv.config()
 const app = express()
 
 // Using the express functions
-app.use(cors({origin:"*"}))
+app.use(cors(
+   {origin:"https://bolacash.netlify.app/",
+    methods: "GET,POST,PUT,DELETE",
+    allowedHeaders: "Content-Type,Authorization"
+   }
+))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use('/bolacash', router)
