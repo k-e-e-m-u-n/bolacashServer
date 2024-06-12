@@ -37,8 +37,7 @@ export const signUp = async (req, res, next) => {
                 confirmPassword,
                 email,
                 phoneNumber,
-                location,
-                profilePic
+                location
             } = req.body
 
              if(password !== confirmPassword) {
@@ -52,8 +51,7 @@ export const signUp = async (req, res, next) => {
                 password: encrytion,
                 email,
                 phoneNumber,
-                location,
-                profilePic
+                location
             })
 
         

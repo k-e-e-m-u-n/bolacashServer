@@ -14,7 +14,7 @@ const app = express()
 
 // Using the express functions
 app.use(cors(
-   {origin:"https://bolacash.netlify.app/",
+   {origin:"https://bolacash.netlify.app",
     methods: "GET,POST,PUT,DELETE",
     allowedHeaders: "Content-Type,Authorization"
    }
