@@ -19,7 +19,7 @@ const app = express()
 //     allowedHeaders: "Content-Type,Authorization"
 //    }
 // ))
-// app.use(cors({origin: "*"}))
+app.use(cors({origin: "*"}))
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*'); // Allow requests from any origin
@@ -28,12 +28,6 @@ app.use((req, res, next) => {
     next();
   });
 
-// const corsOptions = {
-//    origin: ["https://bolacash.netlify.app","*"], // replace with your allowed domains
-//    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-// };
-
-// app.use(cors(corsOptions));
 
 
 app.use(bodyParser.json())
