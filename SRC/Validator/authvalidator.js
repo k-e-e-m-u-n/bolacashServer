@@ -12,7 +12,7 @@ export const signUpValidator = z.object({
   confirmPassword: z.string(),
   email: z.string().min(3).max(30),
   phoneNumber: z.string().min(10).max(11),
-  location : z.string(),
+  location : z.string()
 }).required({ message: 'Please enter all the required fields' });
 
 

@@ -53,8 +53,6 @@ export const signUp = async (req, res, next) => {
                 phoneNumber,
                 location
             })
-
-        
             await newUser.save()
             res.status(200).json({message:'User registered succesfully', newUser})
             console.log('User registered succesfully', newUser);
