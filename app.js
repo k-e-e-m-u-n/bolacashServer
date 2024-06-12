@@ -21,12 +21,6 @@ const app = express()
 // ))
 // app.use(cors({origin: "*"}))
 
-// app.use((req, res, next) => {
-//     res.setHeader('Access-Control-Allow-Origin', '*'); // Allow requests from any origin
-//     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE'); // Allow specific HTTP methods
-//     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, application/json'); // Allow specific headers
-//     next();
-//   });
 
 
 // app.use(cors({origin: ['https://bolacash.netlify.app']}));
@@ -36,11 +30,17 @@ app.use(cors({
    methods: 'GET,POST,PUT,DELETE', 
    allowedHeaders: 'Content-Type, Authorization'
  }));
- 
+ app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*'); // Allow requests from any origin
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE'); // Allow specific HTTP methods
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, application/json'); // Allow specific headers
+    next();
+  });
+
  
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
-app.use('/api/bolacash', router)
+app.use('/https://bolacash-server.onrender.com/bolacash', router)
 
 // Creating the start server method
 const startServer  = async () => {
