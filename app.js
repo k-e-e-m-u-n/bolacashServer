@@ -31,13 +31,12 @@ const app = express()
 
 // app.use(cors({origin: ['https://bolacash.netlify.app']}));
 
-app.options(cors({ 
-   origin: 'https://bolacash.netlify.app', 
+app.use(cors({ 
+   origin: '*', 
    methods: 'GET,POST,PUT,DELETE', 
-   allowedHeaders: 'Content-Type,Authorization'
+   allowedHeaders: 'Content-Type, Authorization'
  }));
-
-//  app.options('*',cors(corsOptions))
+ 
  
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
