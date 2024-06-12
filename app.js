@@ -29,7 +29,14 @@ const app = express()
 //   });
 
 
-app.use(cors({origin: ['https://bolacash.netlify.app']}));
+// app.use(cors({origin: ['https://bolacash.netlify.app']}));
+
+app.use(cors({ 
+   origin: 'https://bolacash.netlify.app', 
+   methods: 'GET,POST,PUT,DELETE', 
+   allowedHeaders: 'Content-Type,Authorization'
+ }));
+ 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use('/bolacash', router)
