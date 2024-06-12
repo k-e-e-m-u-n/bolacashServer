@@ -3,11 +3,13 @@ import mongoose from 'mongoose'
 const userSchema = mongoose.Schema({
     email: {
         type : String,
-        required : true
+        required : true,
+        unique : true
     },
     userName: {
         type : String,
-        required : true
+        required : true,
+        unique : true
     },
     password: {
         type : String,
@@ -19,7 +21,8 @@ const userSchema = mongoose.Schema({
     },
     phoneNumber: {
         type : String,
-        required : true
+        required : true,
+        unique : true
     },
     location: {
         type : String,
