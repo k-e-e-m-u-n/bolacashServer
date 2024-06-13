@@ -71,7 +71,8 @@ export const signIn = async ( req, res, next) => {
     }
     try {
 
-        const {email,password} = req.body
+       
+        const {email,password,userName,phoneNumber,location} = req.body
         const user = await User.findOne({email})
 
         if(!user){
@@ -85,8 +86,10 @@ export const signIn = async ( req, res, next) => {
         // generate jwt token
         const accessToken =  generateTokenAndSetCookie(user._id,res);
 
-        res.status(200).json({message: "Login Successful",accessToken});
+        res.status(200).json({message: "Login Successful",accessToken,user});
+
         console.log('User Login successful', accessToken);
+
     } catch (error) {
         res.status(500).json({message: error.message});
         console.log('INTERNAL SERVER ERROR',error.message)
