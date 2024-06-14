@@ -12,19 +12,6 @@ dotenv.config()
 // Assigning the express method to a variable
 const app = express()
 
-// Using the express functions
-// app.use(cors(
-//    {origin:"https://bolacash.netlify.app/login",
-//     methods: "GET,POST,PUT,DELETE",
-//     allowedHeaders: "Content-Type,Authorization"
-//    }
-// ))
-// app.use(cors({origin: "*"}))
-
-
-
-// app.use(cors({origin: ['https://bolacash.netlify.app']}));
-
 app.use(cors({ 
    origin: '*', 
    methods: 'GET,POST,PUT,DELETE', 
